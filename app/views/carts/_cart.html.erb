@@ -1,0 +1,16 @@
+<div class="cart_title">カート</div>
+<table>
+  <%= render(cart.line_items) %>
+
+  <tr class="total_line">
+    <td colspan="2">合計</td>
+    <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+  </tr>
+</table>
+
+<% unless @disabled %>
+  <div id="cart_operation" align="center">
+    <%= button_to "チェックアウト", new_order_path, method: :get, form_class: "btn" %>
+    <%= button_to "カートを空にする", @cart, method: :delete, form_class: "btn", remote: true, confirm: "本当によいですか？" %>
+  </div>
+<% end %>

@@ -1,0 +1,6 @@
+<% if @cart.line_items.empty? %>
+  $('#cart').style = "display: none;";
+<% else %>
+  $('#cart').html("<%=j render @cart %>");
+<% end %>
+

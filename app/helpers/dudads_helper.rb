@@ -1,0 +1,2 @@
+module DudadsHelper
+end

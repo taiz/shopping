@@ -1,0 +1,14 @@
+<h3>Pragmaticオンラインストアでのご注文を発送しました</h3>
+<p>
+  ご注文の商品を発送したことをお知らせいたします。
+</p>
+<table>
+  <tr><th colspan="2">数量</th><th>説明</th></tr>
+  <% @order.line_items.each do |item| %>
+    <tr>
+      <td><%= item.quantity %>&times;</td>
+      <td><%= item.product.title %></td>
+      <td class="line_item_price"><%= number_to_currency(item.total_price) %></td>
+    </tr>
+  <% end %>
+</table>
